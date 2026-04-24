@@ -25,24 +25,16 @@ The entire observation system will end up in a FFF Polymer 3D printer made to be
 
 One component I find particularly interesting is the strain gauge measurement system.
 
-The strain gauge operates by changing its electrical resistance in response to mechanical deformation. This change in resistance is extremely small, so it is typically measured using a Wheatstone bridge configuration.
+The strain gauge operates by changing its electrical resistance in response to mechanical deformation. Its resistance will increase when stretched and decrease when it is compressed. This change in resistance is extremely small, so it is measured using a Wheatstone bridge configuration.
 
-A Wheatstone bridge consists of four resistive elements arranged in a diamond structure. When the bridge is balanced, the voltage difference between the two midpoint nodes is zero. When the strain gauge experiences deformation, its resistance changes slightly, unbalancing the bridge and producing a measurable differential voltage.
+A Wheatstone bridge consists of four resistors arranged in a diamond structure with two voltage divider nodes specified at the two middle corners. When the bridge is balanced, the voltage difference between the two midpoint nodes is zero. When the strain gauge experiences deformation, its resistance changes slightly and the difference in voltage at the two nodes becomes non-zero. The voltage is measured at both of the midpoints and is compared. This is used because it is easier to amplify and filter the differences in voltage is used rather than the resistance of the strain gauge itself.
 
 This configuration allows the system to:
 - Detect extremely small resistance changes  
 - Convert mechanical strain into a voltage signal  
 - Reject common-mode noise through differential measurement  
 
-The output of the bridge is then amplified and digitized using an ADC (HX711 in this system), enabling high-resolution measurement of strain.
-
-From a system perspective, accuracy depends on:
-- Stability of the excitation voltage  
-- Matching of bridge resistances  
-- Noise in the analog signal path  
-- ADC resolution and amplification quality  
-
-This chain—from mechanical deformation to digital signal—highlights how physical phenomena are translated into measurable data, which I find particularly compelling.
+The output of the bridge is then amplified and digitized using an ADC, enabling precise measurement of strain.
 
 ---
 
