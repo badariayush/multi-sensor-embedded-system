@@ -11,13 +11,13 @@ This project involved designing and integrating a multi-sensor embedded system f
 
 The design required careful consideration of signal integrity, sensor interfacing, and reliability under non-standard operating conditions.
 
+The entire observation system will end up in a FFF Polymer 3D printer made to be tested in space and will be launched for testing in the coming years. It will be tested to advance in-space additive manufacturing. 
+
 ---
 
 ## System Architecture
 
-![Block Diagram](images/block_diagram.png)
-
-*Figure 1: High-level system architecture showing SPI, I2C, GPIO, and analog sensor pathways.*
+*PNG File: High-level system architecture showing SPI, I2C, GPIO, and analog sensor pathways.*
 
 ---
 
