@@ -51,30 +51,15 @@ Most external sensor connections were implemented using through-hole components.
 - Increased durability during handling and integration  
 - More reliable connections compared to surface-only interfaces  
 
-This was especially important given environmental constraints where traditional mounting methods (such as plastic cable management) could introduce risks such as outgassing.
+This was especially important given environmental constraints where traditional mounting methods (such as plastic cable clamps) could lead to risks such as outgassing which is especially important in space/microgravity environments.
 
 ### 3. Centralized Sensor Integration Board
-All sensors were routed through a single integration board, reducing wiring complexity and making the system easier to assemble, debug, and maintain.
+All sensors were routed through a single integration board, reducing wiring complexity and making the system easier to assemble, debug, and maintain. All sensors were directly remade with all ICs into the board to reduce the troubleshooting and mounting space that would be added if each sensor was bought seperately.
 
 ### 4. Modular Bus Architecture (SPI / I2C Separation)
-Sensors were grouped by communication protocol, allowing individual subsystems to be tested or modified without affecting the entire system. This significantly improved debugging efficiency.
+Sensors were grouped by communication protocol, allowing individual subsystems to be tested or modified without affecting the entire system. This significantly improved debugging efficiency. Since not all sensor data will be accessed constantly, the bus system combined with the Klipper software allows for the Rpi to select sensors and communicate with them individually when needed. 
 
 ### 5. Clear Signal Path Separation (Analog vs Digital)
 Analog sensor pathways (such as the strain gauge) were intentionally separated from high-speed digital lines to reduce noise coupling and improve measurement accuracy.
 
 ---
-
-## Future Improvements
-
-If extended further, I would focus on improving measurement robustness:
-
-- Implement calibration routines to correct for sensor drift and offset over time  
-- Improve shielding and grounding strategies for low-level analog signals  
-- Add automated validation checks to detect anomalies in sensor outputs  
-- Characterize system-level error sources (temperature drift, noise, ADC nonlinearity)  
-
----
-
-## Notes
-
-This submission focuses on system-level design decisions, sensor physics, and measurement architecture, rather than specific proprietary implementation details.
